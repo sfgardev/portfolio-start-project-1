@@ -43,13 +43,9 @@ const IconWrapper = styled.div`
 
 const SkillTitle = styled.h3`
   margin: 4.375rem 0 1rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.06rem;
   text-transform: uppercase;
 `;
 
 const SkillText = styled.p`
-  font-size: 0.875rem;
   text-align: center;
 `;
