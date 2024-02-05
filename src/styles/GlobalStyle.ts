@@ -40,6 +40,10 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
 
+    section {
+        padding: 6.25rem 0;
+    }
+
     section:nth-of-type(odd) {
         background-color: ${theme.colors.primaryBg};
     }
