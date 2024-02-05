@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./Theme";
 
 export const GlobalStyle = createGlobalStyle`
     // font-family: 'Josefin Sans', sans-serif;
@@ -18,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        color: ${theme.colors.font}
     }
 
     code {
@@ -35,5 +37,13 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: none;
         border: none;
+    }
+
+    section:nth-of-type(odd) {
+        background-color: ${theme.colors.primaryBg};
+    }
+
+    section:nth-of-type(even) {
+        background-color: ${theme.colors.secondaryBg};
     }
 `;
