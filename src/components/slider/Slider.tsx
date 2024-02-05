@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
+import { theme } from "../../styles/Theme";
 
 export const Slider = () => {
   return (
@@ -11,12 +12,12 @@ export const Slider = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </SlideText>
-          <SlideText>@ivan ivanow</SlideText>
+          <SlideName>@ivan ivanow</SlideName>
         </Slide>
       </FlexWrapper>
       <Pagination>
         <span></span>
-        <span></span>
+        <span className="active"></span>
         <span></span>
       </Pagination>
     </StyledSlider>
@@ -24,7 +25,6 @@ export const Slider = () => {
 };
 
 const StyledSlider = styled.div`
-  border: 1px solid red;
   max-width: 500px;
 `;
 const Slide = styled.div`
@@ -32,17 +32,32 @@ const Slide = styled.div`
 `;
 const SlideText = styled.p``;
 
-const SlideName = styled.span``;
+const SlideName = styled.span`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 1.375rem 0 2.625rem;
+`;
 
 const Pagination = styled.div`
   text-align: center;
-  
+
   span {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    border-radius: 4px;
-    background-color: #de1c1c;
+    width: 7px;
+    height: 7px;
+    border-radius: 50px;
+    background-color: #ffffff80;
+
+    & + span {
+      margin-left: 5px;
+    }
+
+    &.active {
+      width: 20px;
+      background-color: ${theme.colors.accent};
+    }
   }
 `;
