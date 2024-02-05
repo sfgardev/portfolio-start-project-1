@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { SocialList } from "../../components/socialList/SocialList";
+import { theme } from "../../styles/Theme";
 
 export const Footer = () => {
   return (
@@ -16,10 +17,18 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  min-height: 20vh;
-  background-color: #e5b86a;
+  padding: 2.5rem 0;
+  background-color: ${theme.colors.primaryBg};
 `;
 
-const Name = styled.span``;
+const Name = styled.span`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+`;
 
-const Copyright = styled.small``;
+const Copyright = styled.small`
+  font-size: 0.75rem;
+  opacity: 0.5;
+`;
