@@ -10,7 +10,7 @@ export const SocialList = () => {
           <Icon
             height="21"
             width="21"
-            viewBox="0 0 21px 21px"
+            viewBox="0 0 21 21"
             iconId="instagram"
           />
         </SocialLink>
@@ -20,14 +20,14 @@ export const SocialList = () => {
           <Icon
             height="21"
             width="21"
-            viewBox="0 0 21px 21px"
+            viewBox="0 0 21 21"
             iconId="telegram"
           />
         </SocialLink>
       </SocialItem>
       <SocialItem>
         <SocialLink href="#">
-          <Icon height="21" width="21" viewBox="0 0 21px 21px" iconId="vk" />
+          <Icon height="21" width="21" viewBox="0 0 21 21" iconId="vk" />
         </SocialLink>
       </SocialItem>
       <SocialItem>
@@ -35,7 +35,7 @@ export const SocialList = () => {
           <Icon
             height="21"
             width="21"
-            viewBox="0 0 21px 21px"
+            viewBox="0 0 21 21"
             iconId="linkedin"
           />
         </SocialLink>
