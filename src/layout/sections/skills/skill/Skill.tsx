@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { theme } from "../../../../styles/Theme";
 
 type SkillProps = {
   title: string;
@@ -21,8 +22,13 @@ export const Skill = (props: SkillProps) => {
 };
 
 const StyledSkill = styled.div`
-  width: 23.75rem;
+  width: 20.625rem;
+  flex-grow: 1;
   padding: 3.875rem 1.25rem 2.5rem;
+
+  @media ${theme.media.mobile} {
+    padding: 3.875rem 0 2.5rem;
+  }
 `;
 
 export const IconWrapper = styled.div`
