@@ -45,6 +45,10 @@ export const GlobalStyle = createGlobalStyle`
 
     section {
         padding: 6.25rem 0;
+
+        @media ${theme.media.mobile} {
+            padding: 5rem 0;
+        }
     }
 
     section:nth-of-type(odd) {
