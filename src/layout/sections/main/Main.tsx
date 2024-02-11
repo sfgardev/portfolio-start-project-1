@@ -4,12 +4,13 @@ import svetaImgWebp from "../../../assets/images/sveta.webp";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+import { font } from "../../../styles/Common";
 
 export const Main = () => {
   return (
     <StyledMain>
       <Container>
-        <FlexWrapper justify="space-between" align="center" $wrap>
+        <FlexWrapper justify="space-around" align="center" $wrap>
           <div>
             <SmallText>Hi There</SmallText>
             <Name>
@@ -40,6 +41,7 @@ const StyledMain = styled.section`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
+  margin-top: 4.0625rem;
 
   &::before {
     content: "";
@@ -50,6 +52,13 @@ const PhotoWrapper = styled.div`
     top: -24px;
     left: 24px;
     z-index: -1;
+
+    @media ${theme.media.mobile} {
+      width: 19.625rem;
+      height: 25.875rem;
+      top: -17px;
+      left: 20px;
+    }
   }
 `;
 
@@ -57,22 +66,37 @@ const Photo = styled.img`
   width: 21.875rem;
   height: 26.875rem;
   object-fit: cover;
+  margin-right: 20px;
+
+  @media ${theme.media.mobile} {
+    width: 19.375rem;
+    height: 23.75rem;
+  }
 `;
 
 const MainTitle = styled.h1`
-  font-size: 1.6875rem;
-  font-weight: 400;
+  ${font({ weight: 400, fMax: 1.6875, fMin: 1.25 })}
 `;
 
 const Name = styled.h2`
-  font-size: 3.125rem;
-  font-family: "Josefin Sans", sans-serif;
+  ${font({
+    family: '"Josefin Sans", sans-serif',
+    weight: 700,
+    fMax: 3.125,
+    fMin: 2.5,
+  })}
+
   letter-spacing: 5%;
   margin: 0.625rem 0;
+
+  @media ${theme.media.mobile} {
+    margin: 0.9375rem 0 1.375rem;
+  }
 
   span {
     position: relative;
     z-index: 0;
+    white-space: nowrap;
 
     &::before {
       content: "";
