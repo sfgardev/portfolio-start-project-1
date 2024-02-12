@@ -1,9 +1,10 @@
+import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Form } from "../../../components/form/Form";
 import { Container } from "../../../components/Container";
 
-export const Contact = () => {
+export const Contact: React.FC = () => {
   return (
     <StyledContact>
       <Container>
