@@ -39,6 +39,7 @@ export const Works: React.FC = () => {
         <FlexWrapper justify="space-between" align="flex-start" $wrap>
           {workData.map((work) => (
             <Work
+              key={work.title}
               title={work.title}
               text={work.text}
               webpSrc={work.webpSrc}

@@ -8,7 +8,7 @@ export const SocialList: React.FC = () => {
   return (
     <S.SocialList>
       {socialItemData.map((item) => (
-        <S.SocialItem>
+        <S.SocialItem key={item}>
           <S.SocialLink href="#">
             <Icon height="21" width="21" viewBox="0 0 21 21" iconId={item} />
           </S.SocialLink>
