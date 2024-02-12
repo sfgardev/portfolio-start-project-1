@@ -1,71 +1,19 @@
-import styled from "styled-components";
+import React from "react";
 import { Icon } from "../icon/Icon";
-import { theme } from "../../styles/Theme";
+import { S } from "./SocialList_Styles";
 
-export const SocialList = () => {
+const socialItemData = ["instagram", "telegram", "vk", "linkedin"];
+
+export const SocialList: React.FC = () => {
   return (
-    <StyledSocialList>
-      <SocialItem>
-        <SocialLink href="#">
-          <Icon
-            height="21"
-            width="21"
-            viewBox="0 0 21 21"
-            iconId="instagram"
-          />
-        </SocialLink>
-      </SocialItem>
-      <SocialItem>
-        <SocialLink href="#">
-          <Icon
-            height="21"
-            width="21"
-            viewBox="0 0 21 21"
-            iconId="telegram"
-          />
-        </SocialLink>
-      </SocialItem>
-      <SocialItem>
-        <SocialLink href="#">
-          <Icon height="21" width="21" viewBox="0 0 21 21" iconId="vk" />
-        </SocialLink>
-      </SocialItem>
-      <SocialItem>
-        <SocialLink href="#">
-          <Icon
-            height="21"
-            width="21"
-            viewBox="0 0 21 21"
-            iconId="linkedin"
-          />
-        </SocialLink>
-      </SocialItem>
-    </StyledSocialList>
+    <S.SocialList>
+      {socialItemData.map((item) => (
+        <S.SocialItem>
+          <S.SocialLink href="#">
+            <Icon height="21" width="21" viewBox="0 0 21 21" iconId={item} />
+          </S.SocialLink>
+        </S.SocialItem>
+      ))}
+    </S.SocialList>
   );
 };
-
-const StyledSocialList = styled.ul`
-  display: flex;
-  gap: 1.25rem;
-  margin: 1.875rem 0;
-`;
-
-const SocialItem = styled.li``;
-
-const SocialLink = styled.a`
-  width: 35px;
-  height: 35px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: ${theme.colors.accent};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.35s;
-
-  &:hover {
-    color: ${theme.colors.primaryBg};
-    background-color: ${theme.colors.accent};
-    translate: 0 -4px;
-  }
-`;
