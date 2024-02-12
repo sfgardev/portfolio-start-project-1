@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Icon } from "../../components/icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { SocialList } from "../../components/socialList/SocialList";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
 
 export const Footer = () => {
   return (
@@ -22,9 +22,12 @@ const StyledFooter = styled.footer`
 `;
 
 const Name = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.375rem;
-  font-weight: 700;
+  ${font({
+    family: '"Josefin Sans", sans-serif',
+    weight: 700,
+    fMax: 1.375,
+    fMin: 1,
+  })}
   letter-spacing: 3px;
 `;
 
