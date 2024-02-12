@@ -1,63 +1,25 @@
-import styled from "styled-components";
+import React from "react";
 import { FlexWrapper } from "../FlexWrapper";
-import { theme } from "../../styles/Theme";
+import { S } from "./Slider_Styles";
 
-export const Slider = () => {
+export const Slider: React.FC = () => {
   return (
-    <StyledSlider>
+    <S.Slider>
       <FlexWrapper>
-        <Slide>
-          <SlideText>
+        <S.Slide>
+          <S.SlideText>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </SlideText>
-          <SlideName>@ivan ivanow</SlideName>
-        </Slide>
+          </S.SlideText>
+          <S.SlideName>@ivan ivanow</S.SlideName>
+        </S.Slide>
       </FlexWrapper>
-      <Pagination>
+      <S.Pagination>
         <span></span>
         <span className="active"></span>
         <span></span>
-      </Pagination>
-    </StyledSlider>
+      </S.Pagination>
+    </S.Slider>
   );
 };
-
-const StyledSlider = styled.div`
-  max-width: 500px;
-`;
-const Slide = styled.div`
-  text-align: center;
-`;
-const SlideText = styled.p``;
-
-const SlideName = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  display: inline-block;
-  margin: 1.375rem 0 2.625rem;
-`;
-
-const Pagination = styled.div`
-  text-align: center;
-
-  span {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50px;
-    background-color: #ffffff80;
-
-    & + span {
-      margin-left: 5px;
-    }
-
-    &.active {
-      width: 20px;
-      background-color: ${theme.colors.accent};
-    }
-  }
-`;
