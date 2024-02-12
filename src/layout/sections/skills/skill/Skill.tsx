@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { S } from "../Skills_Styles";
 
@@ -8,7 +8,7 @@ type SkillProps = {
   icon: ReactNode;
 };
 
-export const Skill = (props: SkillProps) => {
+export const Skill: React.FC<SkillProps> = (props) => {
   return (
     <S.Skill>
       <FlexWrapper direction="column" align="center">

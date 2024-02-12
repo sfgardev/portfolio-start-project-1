@@ -1,3 +1,4 @@
+import React from "react";
 import { Container } from "../../../components/Container";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
@@ -38,7 +39,7 @@ const skillData = [
   },
 ];
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
   return (
     <S.Skills>
       <Container>
