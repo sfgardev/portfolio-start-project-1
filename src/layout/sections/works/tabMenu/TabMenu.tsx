@@ -1,14 +1,27 @@
 import React from "react";
 import { Link } from "../../../../components/Link";
 import { S } from "./TabMenu_Styles";
+import { TabsItem, TabsItemStatus } from "../Works";
 
-export const TabMenu: React.FC<{ menuItems: string[] }> = (props) => {
+type TabMenuProps = {
+  tabsItems: TabsItem[];
+  currentFilterStatus: TabsItemStatus;
+  onChangeStatus: (status: TabsItemStatus) => void;
+};
+
+export const TabMenu: React.FC<TabMenuProps> = (props) => {
   return (
     <S.TabMenu>
       <ul>
-        {props.menuItems.map((item) => (
-          <S.ListItem key={item}>
-            <Link href={`#${item}`}>{item}</Link>
+        {props.tabsItems.map((item) => (
+          <S.ListItem key={item.title}>
+            <Link
+              active={props.currentFilterStatus === item.status}
+              as="button"
+              onClick={() => props.onChangeStatus(item.status)}
+            >
+              {item.title}
+            </Link>
           </S.ListItem>
         ))}
       </ul>

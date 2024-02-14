@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../../../components/Container";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
@@ -11,15 +11,41 @@ import socialNetworkWebp from "../../../assets/images/social-network.webp";
 import timerPng from "../../../assets/images/timer.png";
 import timerWebp from "../../../assets/images/timer.webp";
 
-const items = ["all", "landing page", "react", "spa"];
+// const tabsItems = ["all", "landing page", "react", "spa"];
+export type TabsItemStatus = "all" | "landing" | "react" | "spa";
 
-const workData = [
+export type TabsItem = {
+  title: string;
+  status: TabsItemStatus;
+};
+
+const tabsItems: TabsItem[] = [
+  {
+    title: "All",
+    status: "all",
+  },
+  {
+    title: "Landing page",
+    status: "landing",
+  },
+  {
+    title: "React",
+    status: "react",
+  },
+  {
+    title: "Spa",
+    status: "spa",
+  },
+];
+
+const worksData = [
   {
     title: "Social Network",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     webpSrc: socialNetworkWebp,
     pngSrc: socialNetworkPng,
     alt: "social work illustration",
+    type: "spa",
   },
   {
     title: "Timer",
@@ -27,17 +53,35 @@ const workData = [
     webpSrc: timerWebp,
     pngSrc: timerPng,
     alt: "timer illustration",
+    type: "react",
   },
 ];
 
 export const Works: React.FC = () => {
+  const [currentFilterStatus, setCurrentFilterStatus] =
+    useState<TabsItemStatus>("all");
+
+  const filteredWorks =
+    currentFilterStatus === "all"
+      ? [...worksData]
+      : worksData.filter((work) => work.type === currentFilterStatus);
+
+  const handleChangeStatus = (status: TabsItemStatus) => {
+    setCurrentFilterStatus(status);
+  };
+
   return (
     <S.Works>
       <Container>
         <SectionTitle>My Works</SectionTitle>
-        <TabMenu menuItems={items} />
+        <TabMenu
+          tabsItems={tabsItems}
+          currentFilterStatus={currentFilterStatus}
+          onChangeStatus={handleChangeStatus}
+        />
         <FlexWrapper justify="space-between" align="flex-start" $wrap>
-          {workData.map((work) => (
+          {filteredWorks.length === 0 && <p>No works</p>}
+          {filteredWorks.map((work) => (
             <Work
               key={work.title}
               title={work.title}
