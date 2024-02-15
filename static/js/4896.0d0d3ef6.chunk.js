@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio_start=self.webpackChunkportfolio_start||[]).push([[4896],{4896:function(o,e,i){i.r(e),i.d(e,{bounce:function(){return t}});var n=i(4709),l=function(o){void 0===o.collisionMaxSpeed&&(o.collisionMaxSpeed=(0,n.Gu)(o.options.collisions.maxSpeed)),o.velocity.length>o.collisionMaxSpeed&&(o.velocity.length=o.collisionMaxSpeed)};function t(o,e){(0,n.kR)((0,n.gy)(o),(0,n.gy)(e)),l(o),l(e)}}}]);
+//# sourceMappingURL=4896.0d0d3ef6.chunk.js.map
