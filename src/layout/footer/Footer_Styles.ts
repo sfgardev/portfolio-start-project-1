@@ -3,6 +3,7 @@ import { font } from "../../styles/Common";
 import { theme } from "../../styles/Theme";
 
 const Footer = styled.footer`
+  position: relative;
   padding: 2.5rem 0;
   background-color: ${theme.colors.primaryBg};
 `;

@@ -15,4 +15,6 @@ export const Contact: React.FC = () => {
   );
 };
 
-const StyledContact = styled.section``;
+const StyledContact = styled.section`
+  position: relative;
+`;
