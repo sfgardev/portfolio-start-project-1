@@ -72,17 +72,30 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   inset: 0;
   background-color: rgba(31, 31, 31, 0.9);
   z-index: 99999;
-  display: ${(props) => (props.isOpen ? "flex" : "none")};
+  display: flex;
   justify-content: center;
   align-items: center;
+  translate: 0 -100%;
+  transition: all 0.35s;
 
   ul {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.35s;
   }
+
+  ${(props) =>
+    props.isOpen &&
+    css<{ isOpen: boolean }>`
+      translate: 0;
+
+      & ul {
+        gap: 30px;
+      }
+    `}
 `;
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
