@@ -6,7 +6,7 @@ import { Container } from "../../../components/Container";
 
 export const Contact: React.FC = () => {
   return (
-    <StyledContact>
+    <StyledContact id="contact">
       <Container>
         <SectionTitle>Contact</SectionTitle>
         <Form />

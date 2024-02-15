@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu } from "../menu/Menu";
 import { S } from "../HeaderMenu_Styles";
 
-export const MobileMenu: React.FC<{ menuItems: string[] }> = (props) => {
+export const MobileMenu: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -19,7 +19,7 @@ export const MobileMenu: React.FC<{ menuItems: string[] }> = (props) => {
         <span></span>
       </S.BurgerButton>
       <S.MobileMenuPopup isOpen={menuIsOpen} onClick={handleCloseMobileMenu}>
-        <Menu menuItems={props.menuItems} />
+        <Menu />
       </S.MobileMenuPopup>
     </S.MobileMenu>
   );
