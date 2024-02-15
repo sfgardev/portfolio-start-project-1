@@ -5,6 +5,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { TabMenu } from "./tabMenu/TabMenu";
 import { Work } from "./work/Work";
 import { S } from "./Works_Styles";
+import { motion, AnimatePresence } from "framer-motion";
 
 import socialNetworkPng from "../../../assets/images/social-network.png";
 import socialNetworkWebp from "../../../assets/images/social-network.webp";
@@ -40,6 +41,7 @@ const tabsItems: TabsItem[] = [
 
 const worksData = [
   {
+    id: 1,
     title: "Social Network",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     webpSrc: socialNetworkWebp,
@@ -48,6 +50,7 @@ const worksData = [
     type: "spa",
   },
   {
+    id: 2,
     title: "Timer",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
     webpSrc: timerWebp,
@@ -80,17 +83,27 @@ export const Works: React.FC = () => {
           onChangeStatus={handleChangeStatus}
         />
         <FlexWrapper justify="space-between" align="flex-start" $wrap>
-          {filteredWorks.length === 0 && <p>No works</p>}
-          {filteredWorks.map((work) => (
-            <Work
-              key={work.title}
-              title={work.title}
-              text={work.text}
-              webpSrc={work.webpSrc}
-              pngSrc={work.pngSrc}
-              alt={work.alt}
-            />
-          ))}
+          <AnimatePresence>
+            {filteredWorks.map((work) => (
+              <motion.div
+                style={{ width: "20.65rem", flexGrow: 1, maxWidth: "33.75rem" }}
+                key={work.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                layout
+              >
+                <Work
+                  key={work.id}
+                  title={work.title}
+                  text={work.text}
+                  webpSrc={work.webpSrc}
+                  pngSrc={work.pngSrc}
+                  alt={work.alt}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </FlexWrapper>
       </Container>
     </S.Works>
